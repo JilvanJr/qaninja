@@ -5,18 +5,26 @@ module Enjoeat
             'Virado a Paulista'
         elsif dia == 'terça-feira'
             'Dobradinha'
+        elsif dia == 'quarta-feira'
+            'Feijoada'
+        elsif dia == 'quinta-feira'
+            'Macarronada'
+        elsif dia == 'sexta-feira'
+            'File de Merluza'
+        elsif dia == 'sábado'
+            'Veja o Cardápio'
+        elsif dia == 'domingo'
+            'Fechado'
+        else
+            'Valor inválido'
         end
     end
 end
 World Enjoeat
 # Enjoeat expõe todo os métodos dentro do modulo criado a cima.
 
-Dado("que hoje é segunda-feira") do
-    @hoje = 'segunda-feira'
-end
-
-Dado("que hoje é terça-feira") do
-    @hoje = 'terça-feira'
+Dado("que hoje é {string}") do |dia|
+    @hoje = dia
 end
   
   Quando("eu pergunto qual é o prato do dia") do

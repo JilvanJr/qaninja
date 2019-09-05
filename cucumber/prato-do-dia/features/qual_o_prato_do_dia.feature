@@ -6,16 +6,20 @@ Funcionalidade: Qual é o prato do dia
 
     Cenario: Hoje é dia de virado a paulista
 
-#Pré condição
-        Dado que hoje é segunda-feira
-#Ação, execução
-        Quando eu pergunto qual é o prato do dia
-#verificação        
-        Então a resposta deve ser "Virado a Paulista"
+    Esquema do Cenario: Prato do dia
 
-    Cenario: Hoje é dia de Dobradinha
-
-        Dado que hoje é terça-feira
+        Dado que hoje é <dia>
         Quando eu pergunto qual é o prato do dia
-        Então a resposta deve ser "Dobradinha"
-        
+        Então a resposta deve ser <resposta>
+
+     Exemplos:
+     | dia              | resposta              |
+     | "segunda-feira"  | "Virado a Paulista"   |
+     | "terça-feira"    | "Dobradinha"          |
+     | "quarta-feira"   | "Feijoada"            |
+     | "quinta-feira"   | "Macarronada"         |
+     | "sexta-feira"    | "File de Merluza"     |
+     | "sábado"         | "Veja o Cardápio"     |
+     | "domingo"        | "Fechado"             |
+     | "Nada"           | "Valor inválido"      |
+     | "Tudo"           | "Valor inválido"      |
