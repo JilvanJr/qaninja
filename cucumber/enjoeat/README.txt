@@ -1,13 +1,3 @@
-# Aula 7 - Scenario Outline ou Data Tables?
-## Demais exemplos para .feature
-
-```
-#language: pt
-
-Funcionalidade: Restaurantes    
-    Para que eu possa saber quais os restaurantes disponíveis com o tempo de entrega e nota de avaliação
-    Sendo um usuário que deseja pedir comida
-    Posso acessar a lista de restaurantes
 
     Contexto: Lista de restaurantes
         Dado que tenho uma lista de restaurantes
@@ -46,8 +36,7 @@ Funcionalidade: Restaurantes
 
 ## demais exemplos para _step.rb
 
-```
-# Dado("que tenho uma lista de restaurantes") do
+```# Dado("que tenho uma lista de restaurantes") do
 #     @restaurant_data = [
 #         {name: 'Bread & Bakery', category: 'Padaria', delivery_time: '25 minutos', rating: '4.9'},
 #         {name: 'Burger House', category: 'Hamburgers', delivery_time: '30 minutos', rating: '3.5'},
@@ -100,5 +89,4 @@ Funcionalidade: Restaurantes
 #     expect(restaurants[id]).to have_text delivery_time
 #     expect(restaurants[id]).to have_text rating
 # end
-
 ```
