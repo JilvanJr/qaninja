@@ -20,7 +20,7 @@ Então("vejo os itens disponiveis no cardápio:") do |table|
     end
 end         
 
-Então("eu vejo as seguintes Informações adicionais:") do |table|
+Então("eu vejo as seguintes Informações adicionais:") do |table| 
     infos =  table.rows_hash
     detail = find('#detail')
     expect(detail).to have_text infos["categoria"]
