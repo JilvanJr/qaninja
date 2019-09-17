@@ -15,7 +15,10 @@ Então("deve ser adicionado {int} unidade deste item") do |quantidade|
     expect(cart).to have_text "(#{quantidade}x) #{@produto_nome}"
 end
   
-Então("o valor total deve ser de {string}") do |string|
-    
+Então("o valor total deve ser de {string}") do |valor_total|
+    cart = find('#cart')
+    total = cart.find('tr', text: 'Total:').find('td')
+    expect(total.text).to eql valor_total
+    sleep 3
 end
   
