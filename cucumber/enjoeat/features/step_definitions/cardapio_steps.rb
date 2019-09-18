@@ -5,7 +5,6 @@ end
 
 Quando("eu escolho um restaurante {string}") do |restaurante|                      
     find(".restaurant-item", text: restaurante.upcase).click
-    sleep 2
 end                                                                          
                                                                                
 Então("vejo os itens disponiveis no cardápio:") do |table|                   
@@ -28,6 +27,7 @@ Então("eu vejo as seguintes Informações adicionais:") do |table|
     expect(detail).to have_text infos["horarios"]
 end
   
+
 # Dentro de chaves, não tem conchetes, não é um array
 # esse objeto (table.rows_hash) é um data table, uma linha de rash
 # {"categoria"=>"Hamburgues", "descricao"=>"40 anos  se esoecializando em trash food.", "horarios"=>"Funciona todos os dias, de 10h ás 22h"}
