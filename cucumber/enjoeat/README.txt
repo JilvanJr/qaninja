@@ -1,7 +1,8 @@
 # Aula 7 - Scenario Outline ou Data Tables?
 ## Demais exemplos para .feature
 
-```#language: pt
+```
+#language: pt
 
 Funcionalidade: Restaurantes    
     Para que eu possa saber quais os restaurantes disponíveis com o tempo de entrega e nota de avaliação
@@ -45,57 +46,60 @@ Funcionalidade: Restaurantes
 
 ## demais exemplos para _step.rb
 
-```# Dado("que tenho uma lista de restaurantes") do
-#     @restaurant_data = [
-#         {name: 'Bread & Bakery', category: 'Padaria', delivery_time: '25 minutos', rating: '4.9'},
-#         {name: 'Burger House', category: 'Hamburgers', delivery_time: '30 minutos', rating: '3.5'},
-#         {name: 'Coffe Corner', category: 'Cafeteria', delivery_time: '20 minutos', rating: '4.8'}
-#     ]
-# end
-
-# Quando("acesso a lista de restaurantes") do                                  
-#     visit '/restaurants'
-# end                                                                          
-
-# Então("vejo todas as opções disponíveis") do                                 
-#     restaurantes = all('.restaurant-item') # o metodo all devolve uma coleção de elementos [array]
-# #    puts restaurantes.size #o método size trás a quantidade de itens 
-# #    puts restaurantes.class
-#     expect(restaurantes.size).to be > 0
-# #    expect(restaurantes.size).to eql 6
-
-# end                                                                          
-
-# Então("cada restaurante deve exibir sua categoria") do                       
-#     restaurants = all('.restaurant-item')
-
-#     @restaurant_data.each_with_index do |value, index|
-#         expect(restaurants[index]). to have_content value[:category]
-#     end    
-# end                                                                          
-
-# Então("cada restaurante deve exibir o tempo de entrega") do                  
-#     restaurants = all('.restaurant-item')
-    
-#     @restaurant_data.each_with_index do |value, index|
-#         expect(restaurants[index]). to have_content value[:delivery_time]
-#     end
-# end                                                                          
-
-# Então("cada restaurante deve exibir sua nota de avaliação") do               
-#     restaurants = all('.restaurant-item')
-    
-#     @restaurant_data.each_with_index do |value, index|
-#         expect(restaurants[index]). to have_content value[:rating]
-#     end
-# end
-
-# Então("cada restaurante deve ter {int} {string} {string} {string} {float}") do |id, name, category, delivery_time, rating|
-#     restaurants = all('.restaurant-item')
-
-#     expect(restaurants[id]).to have_text name.upcase
-#     expect(restaurants[id]).to have_text category
-#     expect(restaurants[id]).to have_text delivery_time
-#     expect(restaurants[id]).to have_text rating
-# end
 ```
+ Dado("que tenho uma lista de restaurantes") do
+     @restaurant_data = [
+         {name: 'Bread & Bakery', category: 'Padaria', delivery_time: '25 minutos', rating: '4.9'},
+         {name: 'Burger House', category: 'Hamburgers', delivery_time: '30 minutos', rating: '3.5'},
+         {name: 'Coffe Corner', category: 'Cafeteria', delivery_time: '20 minutos', rating: '4.8'}
+     ]
+ end
+
+ Quando("acesso a lista de restaurantes") do                                  
+     visit '/restaurants'
+ end    
+
+ Então("vejo todas as opções disponíveis") do                                 
+     restaurantes = all('.restaurant-item') # o metodo all devolve uma coleção de elementos [array]
+ #    puts restaurantes.size #o método size trás a quantidade de itens 
+ #    puts restaurantes.class
+     expect(restaurantes.size).to be > 0
+ #    expect(restaurantes.size).to eql 6
+ end    
+
+ Então("cada restaurante deve exibir sua categoria") do                       
+     restaurants = all('.restaurant-item')
+     @restaurant_data.each_with_index do |value, index|
+         expect(restaurants[index]). to have_content value[:category]
+     end    
+ end   
+
+ Então("cada restaurante deve exibir o tempo de entrega") do                  
+     restaurants = all('.restaurant-item')
+   
+     @restaurant_data.each_with_index do |value, index|
+         expect(restaurants[index]). to have_content value[:delivery_time]
+     end
+ end    
+
+ Então("cada restaurante deve exibir sua nota de avaliação") do               
+     restaurants = all('.restaurant-item')
+   
+     @restaurant_data.each_with_index do |value, index|
+         expect(restaurants[index]). to have_content value[:rating]
+     end
+ end
+
+ Então("cada restaurante deve ter {int} {string} {string} {string} {float}") do |id, name, category, delivery_time, rating|
+     restaurants = all('.restaurant-item')
+     expect(restaurants[id]).to have_text name.upcase
+     expect(restaurants[id]).to have_text category
+     expect(restaurants[id]).to have_text delivery_time
+     expect(restaurants[id]).to have_text rating
+ end
+```
+
+#Aula 15 Bota casaco! Identificando elementos pelo indice
+
+Possui Contexto, Esquema do cenario & exemplos, tabela (hashes) adicionando e 
+removendo item do carrinho, interpolação de string, pegando valor filho na div, each_with_index 
