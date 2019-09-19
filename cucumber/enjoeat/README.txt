@@ -103,3 +103,15 @@ Funcionalidade: Restaurantes
 
 Possui Contexto, Esquema do cenario & exemplos, tabela (hashes) adicionando e 
 removendo item do carrinho, interpolação de string, pegando valor filho na div, each_with_index 
+
+
+#Aula 16 Dynamic Steps do Cucumber
+Usa outro BDD dentro do step
+steps %{
+        Quando eu adiciono todos os itens
+    }
+
+
+$Aula 17 Prazer, Page Object
+Instancia classe, 
+classe tem recurso do capybara dentro dela. {include Capybara::DSL}
