@@ -25,7 +25,7 @@ Então("eu vejo as seguintes Informações adicionais:") do |table|
     detail = find('#detail')
     expect(detail).to have_text infos["categoria"]
     expect(detail).to have_text infos["descricao"]
-    expect(detail).to have_text infos["horarios"]
+    expect(detail).to have_text infos["horarios"]    
 end
 # Estudando 1.0 Inicio
 #     detail = find('#detail')

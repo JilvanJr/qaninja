@@ -48,11 +48,9 @@ end
 
 Dado("que eu tenho os seguintes itens no carrinho:") do |table|
     @product_list = table.hashes
-    @product_list.each do |p|
-        p["quantidade"].to_i.times do
-            find(".menu-item-info-box", text: p["nome"].upcase).find(".add-to-cart").click
-        end
-    end
+    steps %{
+        Quando eu adiciono todos os itens
+    }
 end
 
 Quando("eu removo somente o {int}") do |item|
@@ -65,6 +63,11 @@ Quando("eu removo todos os itens") do
         cart = find("#cart")
         cart.all("table tbody tr")[idx].find(".danger").click
     end
+    sleep 3
+end
+
+Quando("eu limpo o meu carrinho") do
+    click_button "Limpar"
 end
   
 Então("vejo a seguinte mensagem no carrinho {string}") do |mensagem|
