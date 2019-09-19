@@ -21,11 +21,22 @@ end
 
 Então("eu vejo as seguintes Informações adicionais:") do |table| 
     infos =  table.rows_hash
+    puts infos
     detail = find('#detail')
     expect(detail).to have_text infos["categoria"]
     expect(detail).to have_text infos["descricao"]
     expect(detail).to have_text infos["horarios"]
 end
+# Estudando 1.0 Inicio
+#     detail = find('#detail')
+#     infos =  table.hashes
+#     infos.each_with_index do |vale, index|
+#         puts vale
+#         puts index
+#         expect(detail[index]).to have_text vale["Categoria"]
+#         expect(detail[index]).to have_text vale["descrição"]
+#         expect(detail[index]).to have_text vale["Horarios"]
+#   end
   
 
 # Dentro de chaves, não tem conchetes, não é um array
@@ -33,3 +44,4 @@ end
 # {"categoria"=>"Hamburgues", "descricao"=>"40 anos  se esoecializando em trash food.", "horarios"=>"Funciona todos os dias, de 10h ás 22h"}
 
 # em cardapio.feature são vários hashs, então em cada linha ele monta um hash e coloca dentro de uma lista, de um array
+# Estudando 1.0 FIM 

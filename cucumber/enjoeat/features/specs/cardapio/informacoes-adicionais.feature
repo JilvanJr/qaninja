@@ -14,3 +14,8 @@ Funcionalidade: Informações Adicionais
             | categoria | Hamburgers                                |
             | descricao | 40 anos se especializando em trash food.  |
             | horarios  | Funciona todos os dias, de 10h às 22h     |
+
+
+            # Estudando 1.0
+            # | categoria  | descricao                               | horarios                              |
+            # | Hamburgers | 40 anos se especializando em trash food.| Funciona todos os dias, de 10h às 22h |
