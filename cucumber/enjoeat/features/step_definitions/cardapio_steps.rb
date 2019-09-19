@@ -24,7 +24,8 @@ Então("eu vejo as seguintes Informações adicionais:") do |table|
     expect(detail).to have_text infos["categoria"]
     expect(detail).to have_text infos["descricao"]
     expect(detail).to have_text infos["horarios"]    
-end
+end                                                                  
+
 # Estudando 1.0 Inicio
 #     detail = find('#detail')
 #     infos =  table.hashes
