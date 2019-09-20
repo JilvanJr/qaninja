@@ -98,4 +98,4 @@ Então("o valor total da compra deve ser igual a {string}") do |total_cart|
     expect(
         @order_page.cost_shipping[2]
     ).to have_text total_cart
-end   
+end    
