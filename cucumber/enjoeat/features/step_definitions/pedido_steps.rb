@@ -14,7 +14,6 @@ end
   
 Quando("eu finalizo o pedido com {string}") do |payment|
     @order_page.checkout(payment)
-    sleep 3
 end
   
 Então("devo ver a seguinte mensagem:") do |expect_message|

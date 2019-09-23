@@ -1,3 +1,4 @@
+
 # Aula 7 - Scenario Outline ou Data Tables?
 ## Demais exemplos para .feature
 
@@ -112,6 +113,15 @@ steps %{
     }
 
 
-$Aula 17 Prazer, Page Object
+#Aula 17 Prazer, Page Object
 Instancia classe, 
 classe tem recurso do capybara dentro dela. {include Capybara::DSL}
+
+
+#Aula 20 Ferrari ou Fusca? BDD ou BTD?
+Gerar relatário html, '--out' sera a saida, pasta log nao pode estar dentro da pasta features
+cucumber --format html --out=log/report.html
+
+#Aula 21 Reports do Cucumber
+cucumber.yaml
+relatorio, Formatação html e cmd
