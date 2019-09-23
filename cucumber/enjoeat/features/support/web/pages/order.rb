@@ -11,9 +11,22 @@ class OrderPage
         find('input[formcontrolname=optionalAddress]').set user[:complemento]
     end
 
+    def select_pay(payment)
+        payopt = find('mt-radio[formcontrolname=paymentOption]')
+        payopt.find('div', text: payment).find('div').click
+    end
+
+    def checkout(payment)
+        self.select_pay(payment)
+        click_button "Finalizar Pedido"
+    end
+
     def cost_shipping
         div = find("div[class*=col-sm-6]", text: "Frete e Total:")
         div.all("table tbody tr")
     end
 
+    def sumary
+        find('.content')
+    end
 end
