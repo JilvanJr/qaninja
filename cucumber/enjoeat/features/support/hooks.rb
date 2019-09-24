@@ -14,10 +14,12 @@ Before("@green_food") do
     visit "/restaurants/green-food/menu"
 end
 
-After do 
-    shot_file = page.save_screenshot("log/screenshot.png")
-    shot_b64 = Base64.encode64(File.open(shot_file, "rb").read)
-    embed(shot_b64, "image/png", "screenshot") #Cucumber anexa o screenshot no report
+After do |scenario|
+    if scenario.failed?
+        shot_file = page.save_screenshot("log/screenshot.png")
+        shot_b64 = Base64.encode64(File.open(shot_file, "rb").read)
+        embed(shot_b64, "image/png", "screenshot") #Cucumber anexa o screenshot no report
+    end
 end
 
 # Chama o modulo Base64 do Ruby
