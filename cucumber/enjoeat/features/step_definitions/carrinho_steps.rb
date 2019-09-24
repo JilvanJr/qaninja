@@ -58,7 +58,7 @@ Quando("eu removo todos os itens") do
         @rest_page.cart.remove_item(idx)
         #@cart_page.box.all("table tbody tr")[idx].find(".danger").click
     end
-    sleep 3
+    #sleep 1
 end
 
 Quando("eu limpo o meu carrinho") do
@@ -67,6 +67,7 @@ end
   
 Então("vejo a seguinte mensagem no carrinho {string}") do |mensagem|
     expect(@rest_page.cart.box).to have_text mensagem
+    sleep 2
 end
 
 # finalizar compra

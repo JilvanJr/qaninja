@@ -11,7 +11,7 @@ class CartView
     end
         
     def remove_item(item)
-        box.all('table tbody tr')[item].find('.danger').click
+        box.all("table tbody tr")[item].find(".danger").click
     end
 
     def clean
