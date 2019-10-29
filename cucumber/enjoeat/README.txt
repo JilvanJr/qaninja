@@ -125,3 +125,7 @@ cucumber --format html --out=log/report.html
 #Aula 21 Reports do Cucumber
 cucumber.yaml
 relatorio, Formatação html e cmd
+
+-----------
+Para rodar 
+rake specs["-t @smoke","-p chrome"]
